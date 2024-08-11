@@ -1,0 +1,13 @@
+# Ignore artifacts:
+build
+dist
+
+# Ignore configuration files:
+*.config.js
+*.config.ts
+
+# Ignore specific files:
+src/someFile.js
+
+# Ignore all node_modules
+node_modules
