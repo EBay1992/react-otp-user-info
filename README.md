@@ -41,7 +41,7 @@ Features
 To get started with this project, clone the repository and install the necessary dependencies:
 
 ```bash
-git clone https://github.com/your-username/react-otp-user-info.git
+git clone https://github.com/EBay1992/react-otp-user-info.git
 cd react-otp-user-info
 npm install
 ```
