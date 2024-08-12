@@ -30,8 +30,8 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ErrorBoundary>
-        <Header />
         <Suspense fallback={<div>Loading...</div>}>
+          <Header />
           <Routes>
             <Route
               path="/login"
