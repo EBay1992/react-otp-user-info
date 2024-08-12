@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserData } from '../../../api/Admin.types';
+import { UserData } from '@api/Admin.types';
 import styles from './UserDataTable.module.css';
 
 interface UserDataTableProps {

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useCallback } from 'react';
-import { checkUser, requestOtp, confirmOtp, createUser } from '../api/mockApi';
+import { checkUser, requestOtp, confirmOtp, createUser } from '@api/mockApi';
 
 interface AuthContextValue {
   accessToken: string | null;

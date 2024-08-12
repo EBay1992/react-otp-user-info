@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { checkUser, requestOtp, confirmOtp, createUser } from '../api/mockApi';
+import { checkUser, requestOtp, confirmOtp, createUser } from '@api/mockApi';
 
 export const useAuth = () => {
   const [error, setError] = useState<string>('');

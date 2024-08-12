@@ -1,12 +1,12 @@
 import React, { useState, useEffect, Suspense, useCallback } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import ErrorBoundary from './components/ErrorBoundary';
-import Header from './components/header/Header';
-import { ACCESS_TOKEN_KEY } from './utils/constants';
+import ErrorBoundary from '@components/ErrorBoundary';
+import Header from '@components/header/Header';
+import { ACCESS_TOKEN_KEY } from '@utils/constants';
 import {
   getItemFromLocalStorage,
   setItemIntoLocalStorage,
-} from './utils/storage/localStorage';
+} from '@utils/storage/localStorage';
 
 // React.lazy to dynamically import components
 const Login = React.lazy(() => import('./features/login'));

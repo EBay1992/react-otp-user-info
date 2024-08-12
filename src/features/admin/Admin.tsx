@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { getUserData } from '../../api/mockApi';
-import { ApiError } from '../../api/Login.types';
-import { UserData } from '../../api/Admin.types';
-import { ACCESS_TOKEN_KEY } from '../../utils/constants';
+import { getUserData } from '@api/mockApi';
+import { ApiError } from '@api/Login.types';
+import { UserData } from '@api/Admin.types';
+import { ACCESS_TOKEN_KEY } from '@utils/constants';
 import UserDataTable from './userData/UserDataTable';
-import { removeItemFromLocalStorage } from '../../utils/storage/localStorage';
+import { removeItemFromLocalStorage } from '@utils/storage/localStorage';
 
 interface AdminProps {
   accessToken: string;

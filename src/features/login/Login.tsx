@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
-import { useAuth } from '../../hooks/useAuth';
-import { checkUser } from '../../api/mockApi';
+import { useAuth } from '@hooks/useAuth';
+import { checkUser } from '@api/mockApi';
 import OtpForm from './OtpForm';
 import UserInfoForm from './UserInfoForm';
 import LoginForm from './LoginForm';

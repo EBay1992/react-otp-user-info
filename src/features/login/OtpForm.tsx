@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import Input from '../../components/input/Input';
-import { OPT_REGEX } from '../../utils/constants';
+import Input from '@components/input/Input';
+import { OPT_REGEX } from '@utils/constants';
 import { useState } from 'react';
 
 interface OtpFormProps {

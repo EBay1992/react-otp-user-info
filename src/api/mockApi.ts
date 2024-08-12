@@ -1,8 +1,8 @@
-import { normalizePhoneNumber } from "../utils/transformation";
+import { normalizePhoneNumber } from "@utils/transformation";
 import { UserData } from "./Admin.types";
 import { OtpResponse, ApiError, TokenResponse } from "./Login.types";
-import { getItemFromLocalStorage, setItemIntoLocalStorage } from '../utils/storage/localStorage';
-import { LOCAL_STORAGE_KEY } from "../utils/constants";
+import { getItemFromLocalStorage, setItemIntoLocalStorage } from '@utils/storage/localStorage';
+import { LOCAL_STORAGE_KEY } from "@utils/constants";
 
 // Function to initialize mock user data
 const initializeMockUsersData = (): UserData[] => {
@@ -42,7 +42,7 @@ export const checkUser = (contact: string): Promise<UserData | null> => {
 export const requestOtp = (contact: string): Promise<OtpResponse> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const userExists = mockUsersData.some((u) => u.contact === contact);
+      const userExists = mockUsersData.some((u) => normalizePhoneNumber(u.contact) === normalizePhoneNumber(contact));
       if (userExists) {
         resolve({ message: 'OTP sent successfully' });
       } else {
@@ -56,7 +56,7 @@ export const requestOtp = (contact: string): Promise<OtpResponse> => {
 export const confirmOtp = (contact: string, value: string): Promise<TokenResponse> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const user = mockUsersData.find((u) => u.contact === contact);
+      const user = mockUsersData.find((u) => normalizePhoneNumber(u.contact) === normalizePhoneNumber(contact));
       if (value === '12345' && user) { // Simulating OTP verification
         resolve({ token: user.token });
       } else {
@@ -84,7 +84,7 @@ export const getUserData = (accessToken: string): Promise<UserData> => {
 export const createUser = (contact: string, firstName: string, lastName: string): Promise<UserData> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const existingUser = mockUsersData.find((u) => u.contact === contact);
+      const existingUser = mockUsersData.find((u) => normalizePhoneNumber(u.contact) === normalizePhoneNumber(contact));
       if (existingUser) {
         reject({ message: 'User already exists', status: 409 } as ApiError);
       } else {
@@ -92,7 +92,7 @@ export const createUser = (contact: string, firstName: string, lastName: string)
           id: mockUsersData.length + 1,
           firstName,
           lastName,
-          contact,
+          contact: normalizePhoneNumber(contact),
           token: `mockToken${mockUsersData.length + 1}`
         };
         mockUsersData.push(newUser);

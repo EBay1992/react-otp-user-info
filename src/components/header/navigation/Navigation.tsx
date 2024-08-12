@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Navigation.module.css';
-import { ACCESS_TOKEN_KEY } from '../../utils/constants';
-import { removeItemFromLocalStorage } from '../../utils/storage/localStorage';
+import { removeItemFromLocalStorage } from '@utils/storage/localStorage';
+import { ACCESS_TOKEN_KEY } from '@utils/constants';
 
 function logout() {
   removeItemFromLocalStorage(ACCESS_TOKEN_KEY);
